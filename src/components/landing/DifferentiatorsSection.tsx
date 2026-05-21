@@ -43,7 +43,7 @@ export function DifferentiatorsSection() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           <h2
             className="text-4xl md:text-5xl text-gray-900 mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}

@@ -195,10 +195,12 @@ export function ChatFunnel() {
   }, [])
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
   }, [messages, currentOptions, isTyping])
 
-  const handleOption = async (option: Option) => {
+  const handleOption = async (option: Option, e?: React.MouseEvent) => {
+    e?.preventDefault()
+    e?.stopPropagation()
     setShowOptions(false)
     setCurrentOptions([])
 
@@ -321,7 +323,8 @@ export function ChatFunnel() {
           {currentOptions.map((option) => (
             <button
               key={option.value}
-              onClick={() => handleOption(option)}
+              type="button"
+              onClick={(e) => handleOption(option, e)}
               className="text-left px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-700 hover:border-violet-400 hover:bg-violet-50 hover:text-violet-700 transition-all duration-150 font-medium"
             >
               {option.label}

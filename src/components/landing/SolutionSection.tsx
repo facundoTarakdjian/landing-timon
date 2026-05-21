@@ -81,7 +81,7 @@ const CONTENT = {
 export function SolutionSection({ audience }: Props) {
   const c = CONTENT[audience]
   return (
-    <section className="py-24 bg-white">
+    <section id="solucion" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2
           className="text-4xl md:text-5xl text-gray-900 mb-16 text-center"

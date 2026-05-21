@@ -9,10 +9,10 @@ type Props = {
 
 export function AudienceToggle({ audience, setAudience }: Props) {
   return (
-    <section className="py-16 bg-white border-b border-gray-100">
+    <section className="py-10 bg-white border-b border-gray-100">
       <div className="max-w-2xl mx-auto px-6 text-center">
         <p className="text-xs text-gray-400 uppercase tracking-widest mb-6">
-          La landing se adapta a quién sos
+          ¿Para quién es Timón?
         </p>
         <div className="grid grid-cols-2 gap-4">
           {[
@@ -40,14 +40,15 @@ export function AudienceToggle({ audience, setAudience }: Props) {
             return (
               <button
                 key={opt.value}
+                type="button"
                 onClick={() => setAudience(opt.value)}
-                className={`flex flex-col items-center gap-3 p-6 rounded-2xl border-2 transition-all duration-200 cursor-pointer ${
+                className={`flex flex-col items-center gap-3 p-8 rounded-2xl border-2 transition-all duration-200 cursor-pointer ${
                   isActive ? opt.active : opt.inactive
                 }`}
               >
-                <Icon size={28} className={isActive ? opt.iconActive : 'text-gray-400'} />
+                <Icon size={32} className={isActive ? opt.iconActive : 'text-gray-400'} />
                 <div>
-                  <p className="font-semibold text-base">{opt.label}</p>
+                  <p className="font-semibold text-lg">{opt.label}</p>
                   <p className={`text-xs mt-0.5 ${isActive ? 'opacity-70' : 'text-gray-400'}`}>
                     {opt.sub}
                   </p>
@@ -56,6 +57,10 @@ export function AudienceToggle({ audience, setAudience }: Props) {
             )
           })}
         </div>
+        <p className="text-center text-sm text-gray-400 mt-6">
+          Tocá una opción para ver la landing personalizada
+          <span className="ml-1">↓</span>
+        </p>
       </div>
     </section>
   )
